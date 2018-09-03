@@ -1,2 +1,2 @@
 def find_all(word):
-    return "a"
+    return ["a"]

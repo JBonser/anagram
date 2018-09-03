@@ -12,3 +12,16 @@ class TestAnagram(unittest.TestCase):
         self.assertEqual(2, len(result))
         self.assertTrue("ab" in result)
         self.assertTrue("ba" in result)
+
+    def test_anagram_three_different_characters(self):
+        result = anagram.find_all("abc")
+        self.assertEqual(6, len(result))
+        expected_results = [
+        "abc",
+        "acb",
+        "bac",
+        "bca",
+        "cab",
+        "cba"
+        ]
+        [self.assertTrue(word in result) for word in expected_results]

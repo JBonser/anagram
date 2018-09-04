@@ -24,13 +24,13 @@ class TestAnagram(unittest.TestCase):
         self.assertEqual(1, len(result))
         self.assertTrue("a" in result)
 
-    # def test_recurse_two_different_characters(self):
-    #     result = anagram.recurse_append_anagrams("a", "b")
-    #     self.assertEqual(1, len(result))
-    #     self.assertTrue("ab" in result)
+    def test_recurse_two_different_characters(self):
+        result = anagram.recurse_append_anagrams("a", "b")
+        self.assertEqual(1, len(result))
+        self.assertTrue("ab" in result)
 
-    # def test_recurse_two_remaining_characters(self):
-    #     result = anagram.recurse_append_anagrams("a", "bc")
-    #     self.assertEqual(2, len(result))
-    #     self.assertTrue("abc" in result)
-    #     self.assertTrue("acb" in result)
+    def test_recurse_two_remaining_characters(self):
+        result = anagram.recurse_append_anagrams("a", "bc")
+        self.assertEqual(2, len(result))
+        self.assertTrue("abc" in result)
+        self.assertTrue("acb" in result)

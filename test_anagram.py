@@ -15,8 +15,19 @@ class TestAnagram(unittest.TestCase):
 
     def test_anagram_three_different_characters(self):
         result = anagram.find_all("abc")
-        self.assertEqual(6, len(result))
         expected_results = [ "abc", "acb", "bac", "bca", "cab", "cba"]
+        self.assertEqual(6, len(result))
+        [self.assertTrue(word in result) for word in expected_results]
+
+    def test_anagram_biro_example(self):
+        result = anagram.find_all("biro")
+        expected_results = [
+        "biro", "bior", "brio", "broi", "boir", "bori",
+        "ibro", "ibor", "irbo", "irob", "iobr", "iorb",
+        "rbio", "rboi", "ribo", "riob", "roib", "robi",
+        "obir", "obri", "oibr", "oirb", "orbi", "orib"
+        ]
+        self.assertEqual(24, len(result))
         [self.assertTrue(word in result) for word in expected_results]
 
     def test_recurse_one_character(self):

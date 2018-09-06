@@ -3,7 +3,7 @@ def find_all(word):
     for index, char in enumerate(word):
         word_without_char = word[:index] + word[index+1:]
         anagrams += recurse_append_anagrams(char, word_without_char)
-    return anagrams
+    return list(set(anagrams))
 
 def recurse_append_anagrams(first_word, letters):
     anagrams = []
